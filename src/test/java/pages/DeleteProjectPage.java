@@ -16,7 +16,6 @@ public class DeleteProjectPage extends BasePage {
     protected By addNameSelector = By.name("name");
     protected By checkBoxSelector = By.id("suite_mode_single");
     protected By acceptButtonSelector = By.id("accept");
-   // protected By editProjectButtonSelector = By.xpath("//*[@id=\"content-inner\"]/table/tbody/tr[4]/td[2]/a");
     protected By deleteProjectButtonSelector = By.xpath("//*[@id=\"content-inner\"]/table/tbody/tr[4]/td[3]/a/div");
     protected By deleteCheckboxSelector = By.xpath("//*[@id=\"deleteDialog\"]/div[2]/div/div/label/input");
     protected By confirmationButtonSelector = By.xpath("//*[@id=\"deleteDialog\"]/div[3]/a[1]");
@@ -68,10 +67,6 @@ public class DeleteProjectPage extends BasePage {
     public WebElement acceptButton() {
         return driver.findElement(acceptButtonSelector);
     }
-
-//    public WebElement editButton() {
-//        return driver.findElement(editProjectButtonSelector);
-//    }
 
     public WebElement deleteButton() {
         return driver.findElement(deleteProjectButtonSelector);

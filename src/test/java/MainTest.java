@@ -5,19 +5,29 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import pages.AddProjectPage;
+import pages.EditProjectPage;
 import steps.AddProjectStps;
+import steps.EditProjectStps;
 import steps.LoginStps;
 
 public class MainTest extends BaseTest {
-    private LoginStps loginSteps;
 
-    @Test(enabled = true, priority = 1)
-    public void addProjectTest() {
-        AddProjectStps addProjectStps = new AddProjectStps(driver);
-        addProjectStps.addProject(readProperties.getUserName(), readProperties.getPassword());
+    @Test(enabled = true, priority = 2)
+    public void editProjectTest() {
+        EditProjectStps editProjectStps = new EditProjectStps(driver);
+        editProjectStps.editProject(readProperties.getUserName(), readProperties.getPassword());
 
         Assert.assertTrue(true);
     }
+
+//    @Test(enabled = true, priority = 1)
+//    public void addProjectTest() {
+//        AddProjectStps addProjectStps = new AddProjectStps(driver);
+//        addProjectStps.addProject(readProperties.getUserName(), readProperties.getPassword());
+//
+//        Assert.assertTrue(true);
+//    }
 
 //    @Test(enabled = true)
 //    public void loginPositiveTest(){

@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import pages.AddProjectPage;
 
 public class AddProjectStps {
+
     private WebDriver driver;
 
     public AddProjectStps(WebDriver driver) {

@@ -7,19 +7,29 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.AddProjectPage;
 import pages.EditProjectPage;
+import pages.DeleteProjectPage;
 import steps.AddProjectStps;
 import steps.EditProjectStps;
 import steps.LoginStps;
+import steps.DeleteProjectStps;
 
 public class MainTest extends BaseTest {
 
     @Test(enabled = true, priority = 2)
-    public void editProjectTest() {
-        EditProjectStps editProjectStps = new EditProjectStps(driver);
-        editProjectStps.editProject(readProperties.getUserName(), readProperties.getPassword());
+    public void deleteProjectTest() {
+        DeleteProjectStps deleteProjectStps = new DeleteProjectStps(driver);
+        deleteProjectStps.deleteProject(readProperties.getUserName(), readProperties.getPassword());
 
         Assert.assertTrue(true);
     }
+
+//    @Test(enabled = true, priority = 2)
+//    public void editProjectTest() {
+//        EditProjectStps editProjectStps = new EditProjectStps(driver);
+//        editProjectStps.editProject(readProperties.getUserName(), readProperties.getPassword());
+//
+//        Assert.assertTrue(true);
+//    }
 
 //    @Test(enabled = true, priority = 1)
 //    public void addProjectTest() {

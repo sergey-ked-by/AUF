@@ -23,8 +23,5 @@ public class EditProjectStps {
         editProjectPage.acceptButton().click();
 
         editProjectPage.editButton().click();
-
-
-
     }
 }

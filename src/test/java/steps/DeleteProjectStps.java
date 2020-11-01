@@ -23,5 +23,9 @@ public class DeleteProjectStps {
         deleteProjectPage.acceptButton().click();
 
         deleteProjectPage.deleteButton().click();
+        deleteProjectPage.deleteCheckbox().click();
+        deleteProjectPage.confirmationButton().click();
+
+
        }
 }

@@ -18,6 +18,9 @@ public class DeleteProjectPage extends BasePage {
     protected By acceptButtonSelector = By.id("accept");
    // protected By editProjectButtonSelector = By.xpath("//*[@id=\"content-inner\"]/table/tbody/tr[4]/td[2]/a");
     protected By deleteProjectButtonSelector = By.xpath("//*[@id=\"content-inner\"]/table/tbody/tr[4]/td[3]/a/div");
+    protected By deleteCheckboxSelector = By.xpath("//*[@id=\"deleteDialog\"]/div[2]/div/div/label/input");
+    protected By confirmationButtonSelector = By.xpath("//*[@id=\"deleteDialog\"]/div[3]/a[1]");
+
 
     protected By ERROR_MESSAGE_Selector= By.className("error-on-top");
 
@@ -72,6 +75,14 @@ public class DeleteProjectPage extends BasePage {
 
     public WebElement deleteButton() {
         return driver.findElement(deleteProjectButtonSelector);
+    }
+
+    public WebElement deleteCheckbox() {
+        return driver.findElement(deleteCheckboxSelector);
+    }
+
+    public WebElement confirmationButton() {
+        return driver.findElement(confirmationButtonSelector);
     }
 
     public WebElement getErrorMessage(){

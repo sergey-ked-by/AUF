@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class AddProjectPage extends BasePage {
-
     private static String ENDPOINT = "/auth/login/";
 
     protected By emailSelector = By.id("name");

@@ -20,7 +20,7 @@ public class AddProjectStps {
         addProjectPage.addProjectButton().click();
         addProjectPage.addNameField().sendKeys("Project 1.");
         addProjectPage.markCheckBox().click();
-        addProjectPage.acceptButton().click();
+        addProjectPage.acceptButton().submit();
 
     }
 }

@@ -1,4 +1,5 @@
 import baseEntities.BaseTest;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
@@ -16,7 +17,7 @@ import utils.Retry;
 
 public class MainTest extends BaseTest {
 
-    @Test(enabled = true, priority = 3)
+    @Test(enabled = true, priority = 5)
     public void deleteProjectTest() {
         DeleteProjectStps deleteProjectStps = new DeleteProjectStps(driver);
         deleteProjectStps.deleteProject(readProperties.getUserName(), readProperties.getPassword());
@@ -24,7 +25,7 @@ public class MainTest extends BaseTest {
         Assert.assertTrue(true);
     }
 
-    @Test(enabled = true, priority = 2)
+    @Test(enabled = true, priority = 4)
     public void editProjectTest() {
         EditProjectStps editProjectStps = new EditProjectStps(driver);
         editProjectStps.editProject(readProperties.getUserName(), readProperties.getPassword());
@@ -32,7 +33,7 @@ public class MainTest extends BaseTest {
         Assert.assertTrue(true);
     }
 
-    @Test(enabled = true, priority = 1)
+    @Test(enabled = true, priority = 3)
     public void addProjectTest() {
         AddProjectStps addProjectStps = new AddProjectStps(driver);
         addProjectStps.addProject(readProperties.getUserName(), readProperties.getPassword());
@@ -40,7 +41,11 @@ public class MainTest extends BaseTest {
         Assert.assertTrue(true);
     }
 
-    @Test(enabled = true)
+    @Test(enabled = true, priority = 1, description = "Description for Allure test")
+    @Description("A little details.")
+    @Link("https://aqa07.atlassian.net/browse/AQA07-25")
+    @TmsLink("1")
+    @Severity(SeverityLevel.BLOCKER)
     public void loginPositiveTest(){
         LoginStps loginStps = new LoginStps(driver);
         loginStps.login(readProperties.getUserName(), readProperties.getPassword());
@@ -48,7 +53,9 @@ public class MainTest extends BaseTest {
         Assert.assertTrue(true);
     }
 
-    @Test(enabled = true)
+    @Test(enabled = true, priority = 2)
+    @Issue("/AQA07-25")
+    @Severity(SeverityLevel.NORMAL)
     public void loginNegativeTest(){
         LoginStps loginStps = new LoginStps(driver);
         loginStps.login("fail", readProperties.getPassword());

@@ -20,7 +20,7 @@ public class DeleteProjectStps {
         deleteProjectPage.addProjectButton().click();
         deleteProjectPage.addNameField().sendKeys("Project 1.");
         deleteProjectPage.markCheckBox().click();
-        deleteProjectPage.acceptButton().click();
+        deleteProjectPage.acceptButton().submit();
 
         deleteProjectPage.deleteButton().click();
         deleteProjectPage.deleteCheckbox().click();

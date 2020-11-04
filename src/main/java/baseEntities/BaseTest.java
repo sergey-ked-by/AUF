@@ -17,14 +17,14 @@ public class BaseTest {
 
     }
 
-    @BeforeClass
+    @BeforeMethod
     public void SetUp() {
         this.driver = new BrowserService().getDriver();
         driver.get(new ReadProperties().getURL());
 
     }
 
-    @AfterClass
+    @AfterMethod
     public void tearDown() {
         driver.quit();
 

@@ -5,6 +5,7 @@ import io.github.bonigarcia.wdm.config.DriverManagerType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -23,7 +24,6 @@ public class BrowserService {
                 driverManagerType = DriverManagerType.CHROME;
                 WebDriverManager.getInstance(driverManagerType).setup();
 
-
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--disable-gpu");
                 chromeOptions.addArguments("--start-maximized");
@@ -40,7 +40,7 @@ public class BrowserService {
                 firefoxOptions.addArguments("--disable-gpu");
 
                 driver = new FirefoxDriver(firefoxOptions);
-                driver.manage().window().maximize();
+                //driver.manage().window().maximize();
                 break;
 
             case "ie":
@@ -50,6 +50,8 @@ public class BrowserService {
                 driverManagerType = DriverManagerType.EDGE;
                 WebDriverManager.getInstance(driverManagerType).setup();
                 EdgeOptions edgeOptions = new EdgeOptions();
+
+                driver = new EdgeDriver(edgeOptions);
                 break;
 
             default:

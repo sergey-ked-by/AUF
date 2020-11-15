@@ -52,31 +52,31 @@ public class DeleteProjectPage extends BasePage {
         return driver.findElement(loginSelector);
     }
 
-    public WebElement addProjectButton() {
+    public WebElement getAddProjectButton() {
         return driver.findElement(addProjectSelector);
     }
 
-    public WebElement addNameField() {
+    public WebElement getNameField() {
         return driver.findElement(addNameSelector);
     }
 
-    public WebElement markCheckBox() {
+    public WebElement getCheckBoxMark() {
         return driver.findElement(checkBoxSelector);
     }
 
-    public WebElement acceptButton() {
+    public WebElement getAcceptButton() {
         return driver.findElement(acceptButtonSelector);
     }
 
-    public WebElement deleteButton() {
+    public WebElement getDeleteButton() {
         return driver.findElement(deleteProjectButtonSelector);
     }
 
-    public WebElement deleteCheckbox() {
+    public WebElement getDeleteCheckbox() {
         return driver.findElement(deleteCheckboxSelector);
     }
 
-    public WebElement confirmationButton() {
+    public WebElement getConfirmationButton() {
         return driver.findElement(confirmationButtonSelector);
     }
 

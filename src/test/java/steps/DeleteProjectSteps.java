@@ -3,11 +3,11 @@ package steps;
 import org.openqa.selenium.WebDriver;
 import pages.DeleteProjectPage;
 
-public class DeleteProjectStps {
+public class DeleteProjectSteps {
 
     private WebDriver driver;
 
-    public DeleteProjectStps(WebDriver driver) {
+    public DeleteProjectSteps(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -17,14 +17,14 @@ public class DeleteProjectStps {
         deleteProjectPage.getPasswordField().sendKeys(psw);
         deleteProjectPage.getLoginButton().click();
 
-        deleteProjectPage.addProjectButton().click();
-        deleteProjectPage.addNameField().sendKeys("Project 1.");
-        deleteProjectPage.markCheckBox().click();
-        deleteProjectPage.acceptButton().submit();
+        deleteProjectPage.getAddProjectButton().click();
+        deleteProjectPage.getNameField().sendKeys("Project 1.");
+        deleteProjectPage.getCheckBoxMark().click();
+        deleteProjectPage.getAcceptButton().submit();
 
-        deleteProjectPage.deleteButton().click();
-        deleteProjectPage.deleteCheckbox().click();
-        deleteProjectPage.confirmationButton().click();
+        deleteProjectPage.getDeleteButton().click();
+        deleteProjectPage.getDeleteCheckbox().click();
+        deleteProjectPage.getConfirmationButton().click();
 
 
        }

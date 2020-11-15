@@ -1,10 +1,11 @@
+package tests;
+
 import baseEntities.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import pages.DashboardPage;
-import steps.LoginStps;
+import steps.LoginSteps;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,8 +14,8 @@ public class ActionTests extends BaseTest {
 
     @Test
     public void clickBottomLink() {
-        LoginStps loginStps = new LoginStps(driver);
-        loginStps.login(readProperties.getUserName(), readProperties.getPassword());
+        LoginSteps loginSteps = new LoginSteps(driver);
+        loginSteps.login(readProperties.getUserName(), readProperties.getPassword());
         DashboardPage dashboardPage = new DashboardPage(driver, false);
         dashboardPage.clickBottomProjectLink();
     }
@@ -41,7 +42,7 @@ public class ActionTests extends BaseTest {
         WebElement uploadInput = driver.findElement(By.xpath("//input[@type='file']"));
         uploadInput.sendKeys("C://Users//user//OneDrive//Pictures//Screenshots//Screenshot_5.png");
 
-        driver.findElement(By.id("file-submit")).click();
+        driver.findElement(By.id("file-sendKeys")).click();
     }
 
 

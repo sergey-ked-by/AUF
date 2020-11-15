@@ -39,4 +39,12 @@ public class Waits {
             return null;
         }
     }
+
+    public WebElement isElementClickable(WebElement webElement) {
+        try {
+            return webDriverWait.until(ExpectedConditions.elementToBeClickable(webElement));
+        } catch (TimeoutException ex) {
+            return null;
+        }
+    }
 }

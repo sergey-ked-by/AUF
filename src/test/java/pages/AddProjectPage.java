@@ -4,6 +4,7 @@ import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import wrappers.*;
 
 public class AddProjectPage extends BasePage {
     private static String ENDPOINT = "/auth/login/";
@@ -13,7 +14,8 @@ public class AddProjectPage extends BasePage {
     protected By loginSelector = By.id("button_primary");
     protected By addProjectSelector = By.id("sidebar-projects-add");
     protected By addNameSelector = By.name("name");
-    protected By checkBoxSelector = By.id("suite_mode_single");
+    protected By checkBoxSelector = By.id("show_announcement");
+    protected By radioButtonSelector = By.xpath("//*[@id='suite_mode_single']");
     protected By acceptButtonSelector = By.id("accept");
 
     protected By ERROR_MESSAGE_Selector= By.className("error-on-top");
@@ -29,39 +31,39 @@ public class AddProjectPage extends BasePage {
     }
 
     public boolean isPageOpened() {
-        try {
-            return driver.findElement(By.id("button_primary")).isDisplayed();
-        } catch (Exception ex) {
-            return false;
-        }
+        return waits.isElementDisplayed(By.id("button_primary"));
     }
 
-    public WebElement getEmailField() {
-        return driver.findElement(emailSelector);
+    public Input getEmailField() {
+        return new Input(driver, emailSelector);
     }
 
-    public WebElement getPasswordField() {
-        return driver.findElement(passwordSelector);
+    public Input getPasswordField() {
+        return new Input(driver, passwordSelector);
     }
 
-    public WebElement getLoginButton() {
-        return driver.findElement(loginSelector);
+    public Button getLoginButton() {
+        return new Button(driver, loginSelector);
     }
 
-    public WebElement addProjectButton() {
-        return driver.findElement(addProjectSelector);
+    public Button getAddProjectButton() {
+        return new Button(driver, addProjectSelector);
     }
 
-    public WebElement addNameField() {
-        return driver.findElement(addNameSelector);
+    public Input getNameField() {
+        return new Input(driver, addNameSelector);
     }
 
-    public WebElement markCheckBox() {
-        return driver.findElement(checkBoxSelector);
+    public Checkbox getCheckBoxMark() {
+        return new Checkbox(driver, checkBoxSelector);
     }
 
-    public WebElement acceptButton() {
-        return driver.findElement(acceptButtonSelector);
+    public RadioButton getRadioButton() {
+        return new RadioButton(driver, radioButtonSelector);
+    }
+
+    public Button getAcceptButton() {
+        return new Button(driver, acceptButtonSelector);
     }
 
     public WebElement getErrorMessage(){

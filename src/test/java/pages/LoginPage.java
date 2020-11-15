@@ -4,6 +4,9 @@ import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import wrappers.Button;
+import wrappers.Input;
+import wrappers.UIElement;
 
 public class LoginPage extends BasePage {
     private static String ENDPOINT = "/auth/login/";
@@ -27,16 +30,16 @@ public class LoginPage extends BasePage {
         return waits.isElementDisplayed(By.id("button_primary"));
     }
 
-    public WebElement getEmailField() {
-        return waits.getElementBy(emailSelector);
+    public Input getEmailField() {
+        return new Input(driver, emailSelector);
     }
 
-    public WebElement getPasswordField() {
-        return waits.getElementBy(passwordSelector);
+    public Input getPasswordField() {
+        return new Input(driver, passwordSelector);
     }
 
-    public WebElement getLoginButton() {
-        return waits.getElementBy(loginSelector);
+    public Button getLoginButton() {
+        return new Button(driver, loginSelector);
     }
 
     public WebElement getErrorMessage(){

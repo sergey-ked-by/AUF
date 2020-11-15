@@ -16,7 +16,7 @@ public class EditProjectPage extends BasePage {
     protected By addNameSelector = By.name("name");
     protected By checkBoxSelector = By.id("suite_mode_single");
     protected By acceptButtonSelector = By.id("accept");
-    protected By editProjectButtonSelector = By.xpath("//*[@id=\"content-inner\"]/table/tbody/tr[4]/td[2]/a");
+    protected By editProjectButtonSelector = By.xpath("//*[@id='content-inner']/table/tbody/tr[4]/td[2]/a");
 
     protected By ERROR_MESSAGE_Selector= By.className("error-on-top");
 
@@ -49,23 +49,23 @@ public class EditProjectPage extends BasePage {
         return driver.findElement(loginSelector);
     }
 
-    public WebElement addProjectButton() {
+    public WebElement getAddProjectButton() {
         return driver.findElement(addProjectSelector);
     }
 
-    public WebElement addNameField() {
+    public WebElement getAddNameField() {
         return driver.findElement(addNameSelector);
     }
 
-    public WebElement markCheckBox() {
+    public WebElement getCheckBoxMark() {
         return driver.findElement(checkBoxSelector);
     }
 
-    public WebElement acceptButton() {
+    public WebElement getAcceptButton() {
         return driver.findElement(acceptButtonSelector);
     }
 
-    public WebElement editButton() {
+    public WebElement getEditButton() {
         return driver.findElement(editProjectButtonSelector);
     }
 

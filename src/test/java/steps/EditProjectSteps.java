@@ -3,11 +3,11 @@ package steps;
 import org.openqa.selenium.WebDriver;
 import pages.EditProjectPage;
 
-public class EditProjectStps {
+public class EditProjectSteps {
 
     private WebDriver driver;
 
-    public EditProjectStps(WebDriver driver) {
+    public EditProjectSteps(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -17,11 +17,11 @@ public class EditProjectStps {
         editProjectPage.getPasswordField().sendKeys(psw);
         editProjectPage.getLoginButton().click();
 
-        editProjectPage.addProjectButton().click();
-        editProjectPage.addNameField().sendKeys("Project 1.");
-        editProjectPage.markCheckBox().click();
-        editProjectPage.acceptButton().submit();
+        editProjectPage.getAddProjectButton().click();
+        editProjectPage.getAddNameField().sendKeys("Project 1.");
+        editProjectPage.getCheckBoxMark().click();
+        editProjectPage.getAcceptButton().submit();
 
-        editProjectPage.editButton().click();
+        editProjectPage.getEditButton().click();
     }
 }

@@ -7,12 +7,8 @@ import org.openqa.selenium.WebElement;
 
 public class EditProjectPage extends BasePage {
 
-    private static String ENDPOINT = "/auth/login/";
+    private static String ENDPOINT = "/admin/projects/overview";
 
-    protected By addProjectSelector = By.id("sidebar-projects-add");
-    protected By addNameSelector = By.name("name");
-    protected By checkBoxSelector = By.id("suite_mode_single");
-    protected By acceptButtonSelector = By.id("accept");
     protected By editProjectButtonSelector = By.xpath("//*[@id='content-inner']/table/tbody/tr[4]/td[2]/a");
 
     protected By ERROR_MESSAGE_Selector= By.className("error-on-top");
@@ -28,22 +24,6 @@ public class EditProjectPage extends BasePage {
 
     public boolean isPageOpened() {
         return waits.isElementDisplayed(By.id("navigation-admin"));
-    }
-
-    public WebElement getAddProjectButton() {
-        return driver.findElement(addProjectSelector);
-    }
-
-    public WebElement getAddNameField() {
-        return driver.findElement(addNameSelector);
-    }
-
-    public WebElement getCheckBoxMark() {
-        return driver.findElement(checkBoxSelector);
-    }
-
-    public WebElement getAcceptButton() {
-        return driver.findElement(acceptButtonSelector);
     }
 
     public WebElement getEditButton() {

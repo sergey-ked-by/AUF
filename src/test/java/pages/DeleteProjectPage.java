@@ -7,11 +7,13 @@ import org.openqa.selenium.WebElement;
 
 public class DeleteProjectPage extends BasePage {
 
-    private static String ENDPOINT = "/auth/login/";
+    private static String ENDPOINT = "/admin/projects/overview";
 
-    protected By deleteProjectButtonSelector = By.xpath("//*[@id=\"content-inner\"]/table/tbody/tr[4]/td[3]/a/div");
-    protected By deleteCheckboxSelector = By.xpath("//*[@id=\"deleteDialog\"]/div[2]/div/div/label/input");
-    protected By confirmationButtonSelector = By.xpath("//*[@id=\"deleteDialog\"]/div[3]/a[1]");
+    protected By deleteProjectButtonSelector = By.cssSelector("tbody tr:nth-child(11) td:nth-child(3) a:nth-child(1) " +
+            "div:nth-child(1)");
+    protected By deleteCheckboxSelector = By.cssSelector("div[id='deleteDialog'] input[value='1']");
+    protected By confirmationButtonSelector = By.cssSelector("div[id='deleteDialog'] " +
+            "a[class='button button-ok button-left button-positive dialog-action-default']");
 
     protected By ERROR_MESSAGE_Selector= By.className("error-on-top");
 

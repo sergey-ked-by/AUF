@@ -17,7 +17,7 @@ public class EditProjectSteps {
        AddProjectSteps addProjectSteps = new AddProjectSteps(driver);
        addProjectSteps.addProject(username, psw);
 
-        EditProjectPage editProjectPage = new EditProjectPage(driver, true);
-        editProjectPage.getEditButton().click();
+       EditProjectPage editProjectPage = new EditProjectPage(driver, true);
+       editProjectPage.getEditButton().click();
     }
 }

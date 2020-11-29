@@ -9,17 +9,9 @@ public class DeleteProjectPage extends BasePage {
 
     private static String ENDPOINT = "/auth/login/";
 
-    protected By emailSelector = By.id("name");
-    protected By passwordSelector = By.id("password");
-    protected By loginSelector = By.id("button_primary");
-    protected By addProjectSelector = By.id("sidebar-projects-add");
-    protected By addNameSelector = By.name("name");
-    protected By checkBoxSelector = By.id("suite_mode_single");
-    protected By acceptButtonSelector = By.id("accept");
     protected By deleteProjectButtonSelector = By.xpath("//*[@id=\"content-inner\"]/table/tbody/tr[4]/td[3]/a/div");
     protected By deleteCheckboxSelector = By.xpath("//*[@id=\"deleteDialog\"]/div[2]/div/div/label/input");
     protected By confirmationButtonSelector = By.xpath("//*[@id=\"deleteDialog\"]/div[3]/a[1]");
-
 
     protected By ERROR_MESSAGE_Selector= By.className("error-on-top");
 
@@ -33,54 +25,22 @@ public class DeleteProjectPage extends BasePage {
     }
 
     public boolean isPageOpened() {
-        try {
-            return driver.findElement(By.id("button_primary")).isDisplayed();
-        } catch (Exception ex) {
-            return false;
-        }
-    }
-
-    public WebElement getEmailField() {
-        return driver.findElement(emailSelector);
-    }
-
-    public WebElement getPasswordField() {
-        return driver.findElement(passwordSelector);
-    }
-
-    public WebElement getLoginButton() {
-        return driver.findElement(loginSelector);
-    }
-
-    public WebElement getAddProjectButton() {
-        return driver.findElement(addProjectSelector);
-    }
-
-    public WebElement getNameField() {
-        return driver.findElement(addNameSelector);
-    }
-
-    public WebElement getCheckBoxMark() {
-        return driver.findElement(checkBoxSelector);
-    }
-
-    public WebElement getAcceptButton() {
-        return driver.findElement(acceptButtonSelector);
+        return waits.isElementDisplayed(By.id("navigation-admin"));
     }
 
     public WebElement getDeleteButton() {
-        return driver.findElement(deleteProjectButtonSelector);
+        return waits.getElementBy(deleteProjectButtonSelector);
     }
 
     public WebElement getDeleteCheckbox() {
-        return driver.findElement(deleteCheckboxSelector);
+        return waits.getElementBy(deleteCheckboxSelector);
     }
 
     public WebElement getConfirmationButton() {
-        return driver.findElement(confirmationButtonSelector);
+        return waits.getElementBy(confirmationButtonSelector);
     }
 
     public WebElement getErrorMessage(){
-        return driver.findElement(ERROR_MESSAGE_Selector);
+        return waits.getElementBy(ERROR_MESSAGE_Selector);
     }
 }

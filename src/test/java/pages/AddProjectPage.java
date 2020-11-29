@@ -7,21 +7,17 @@ import org.openqa.selenium.WebElement;
 import wrappers.*;
 
 public class AddProjectPage extends BasePage {
-    private static String ENDPOINT = "/auth/login/";
+    private static String ENDPOINT = "/admin/projects/overview";
 
-    protected By emailSelector = By.id("name");
-    protected By passwordSelector = By.id("password");
-    protected By loginSelector = By.id("button_primary");
-    protected By addProjectSelector = By.id("sidebar-projects-add");
+    protected By addProjectButtonSelector = By.className("button button-left button-add");
     protected By addNameSelector = By.name("name");
     protected By checkBoxSelector = By.id("show_announcement");
-    protected By radioButtonSelector = By.xpath("//*[@id='suite_mode_single']");
+    protected By radioButtonSelector = By.id("suite_mode_single");
     protected By acceptButtonSelector = By.id("accept");
 
     protected By ERROR_MESSAGE_Selector= By.className("error-on-top");
 
     public AddProjectPage(WebDriver driver, boolean openPageByUrl) {
-
         super(driver, openPageByUrl);
     }
 
@@ -31,23 +27,11 @@ public class AddProjectPage extends BasePage {
     }
 
     public boolean isPageOpened() {
-        return waits.isElementDisplayed(By.id("button_primary"));
-    }
-
-    public Input getEmailField() {
-        return new Input(driver, emailSelector);
-    }
-
-    public Input getPasswordField() {
-        return new Input(driver, passwordSelector);
-    }
-
-    public Button getLoginButton() {
-        return new Button(driver, loginSelector);
+        return waits.isElementDisplayed(By.id("navigation-admin"));
     }
 
     public Button getAddProjectButton() {
-        return new Button(driver, addProjectSelector);
+        return new Button(driver, addProjectButtonSelector);
     }
 
     public Input getNameField() {

@@ -1,7 +1,9 @@
 package steps;
 
 import org.openqa.selenium.WebDriver;
+import pages.AddProjectPage;
 import pages.EditProjectPage;
+import pages.LoginPage;
 
 public class EditProjectSteps {
 
@@ -12,16 +14,10 @@ public class EditProjectSteps {
     }
 
     public void editProject(String username, String psw) {
+       AddProjectSteps addProjectSteps = new AddProjectSteps(driver);
+       addProjectSteps.addProject(username, psw);
+
         EditProjectPage editProjectPage = new EditProjectPage(driver, true);
-        editProjectPage.getEmailField().sendKeys(username);
-        editProjectPage.getPasswordField().sendKeys(psw);
-        editProjectPage.getLoginButton().click();
-
-        editProjectPage.getAddProjectButton().click();
-        editProjectPage.getAddNameField().sendKeys("Project 1.");
-        editProjectPage.getCheckBoxMark().click();
-        editProjectPage.getAcceptButton().submit();
-
         editProjectPage.getEditButton().click();
     }
 }

@@ -4,20 +4,26 @@ import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import wrappers.Button;
 import wrappers.Input;
-import wrappers.UIElement;
 
 public class LoginPage extends BasePage {
     private static String ENDPOINT = "/auth/login/";
 
-    protected By emailSelector = By.id("name");
-    protected By passwordSelector = By.id("password");
-    protected By loginSelector = By.id("button_primary");
-    protected By ERROR_MESSAGE_Selector= By.className("error-on-top");
+    @FindBy(id = "name")
+    public WebElement emailSelector;
+
+    @FindBy(id = "password")
+    public WebElement passwordSelector;
+
+    @FindBy(id = "button_primary")
+    public WebElement loginSelector;
+
+    @FindBy(className = "error-on-top")
+    public WebElement ERROR_MESSAGE_Selector;
 
     public LoginPage(WebDriver driver, boolean openPageByUrl) {
-
         super(driver, openPageByUrl);
     }
 
@@ -43,6 +49,6 @@ public class LoginPage extends BasePage {
     }
 
     public WebElement getErrorMessage(){
-        return waits.getElementBy(ERROR_MESSAGE_Selector);
+        return null;
     }
 }

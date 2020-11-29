@@ -9,9 +9,6 @@ public class EditProjectPage extends BasePage {
 
     private static String ENDPOINT = "/auth/login/";
 
-    protected By emailSelector = By.id("name");
-    protected By passwordSelector = By.id("password");
-    protected By loginSelector = By.id("button_primary");
     protected By addProjectSelector = By.id("sidebar-projects-add");
     protected By addNameSelector = By.name("name");
     protected By checkBoxSelector = By.id("suite_mode_single");
@@ -30,23 +27,7 @@ public class EditProjectPage extends BasePage {
     }
 
     public boolean isPageOpened() {
-        try {
-            return driver.findElement(By.id("button_primary")).isDisplayed();
-        } catch (Exception ex) {
-            return false;
-        }
-    }
-
-    public WebElement getEmailField() {
-        return driver.findElement(emailSelector);
-    }
-
-    public WebElement getPasswordField() {
-        return driver.findElement(passwordSelector);
-    }
-
-    public WebElement getLoginButton() {
-        return driver.findElement(loginSelector);
+        return waits.isElementDisplayed(By.id("navigation-admin"));
     }
 
     public WebElement getAddProjectButton() {
